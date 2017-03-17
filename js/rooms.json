@@ -1,0 +1,7 @@
+{
+  "meetings": [{"number": "1", "available": true}, {"number": "2", "available": true}],
+  "games": [{"number": "3", "available": true}, {"number": "4", "available": true}],
+  "quiettime": [{"number": "5", "available": true}, {"number": "6", "available": true}],
+  "learning": [{"number": "7", "available": true}, {"number": "8", "available": true}],
+  "working": [{"number": "9", "available": true}, {"number": "10", "available": true}]
+}
