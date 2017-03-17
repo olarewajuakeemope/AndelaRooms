@@ -1,4 +1,4 @@
-function userAuthentication(form) {
+function validateForm(form) {
   var theUsername = form.username.value;
   var thePassword = form.password.value;
 
@@ -11,4 +11,3 @@ function userAuthentication(form) {
     }
   })
 }
-

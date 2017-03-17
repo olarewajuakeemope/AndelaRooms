@@ -1,7 +1,7 @@
 {
-  "meetings": [{"number": "1", "available": true}, {"number": "2", "available": true}],
-  "games": [{"number": "3", "available": true}, {"number": "4", "available": true}],
-  "quiettime": [{"number": "5", "available": true}, {"number": "6", "available": true}],
-  "learning": [{"number": "7", "available": true}, {"number": "8", "available": true}],
-  "working": [{"number": "9", "available": true}, {"number": "10", "available": true}]
+  "meetings": [{"name": "meeting", "number": "1", "available": true}, {"name": "meetings", "number": "2", "available": true}],
+  "games": [{"name": "games", "number": "3", "available": true}, {"name": "games", "number": "4", "available": true}],
+  "quiettime": [{"name": "quiettime", "number": "5", "available": true}, {"name": "quiettime", "number": "6", "available": true}],
+  "learning": [{"name": "learning", "number": "7", "available": true}, {"name": "learning", "number": "8", "available": true}],
+  "working": [{"name": "working", "number": "9", "available": true}, {"name": "working", "number": "10", "available": true}]
 }
