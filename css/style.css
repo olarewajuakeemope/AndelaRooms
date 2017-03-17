@@ -1,0 +1,36 @@
+body{
+		font-size:14px;
+		margin:0;
+		padding:0;
+		color:#000;
+		background-color:#f0f0f3;
+	}
+
+.wrapper{
+	min-height:600px;
+	margin: 0 auto;
+	width:80%;
+	background-color:#fff;
+}
+
+.man-wrap{
+	margin:0;
+	padding:0;
+}
+
+.man-wrap h1{
+	margin:0;
+	background-color:  #0280db;
+	color: #fff;
+	text-align:center;
+	font-size:30px;
+	padding:20px;
+}
+
+.availables{
+	margin-left:20px;
+}
+
+.availables td{
+	width:150px;
+}
