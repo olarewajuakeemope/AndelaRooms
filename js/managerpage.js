@@ -1,20 +1,17 @@
+var data;
 (function() {
-var data = (localStorage.getItem('rooms')) ? JSON.parse(localStorage.getItem('rooms')):{};
   $.getJSON("js/rooms.json", function(rooms) {
-    localStorage.setItem('rooms', JSON.stringify(rooms));
-    var newObj = rooms.meetings;
+    if (!localStorage.getItem('rooms')) {
+    	localStorage.setItem('rooms', JSON.stringify(rooms));
+    }
+    data = JSON.parse(localStorage.getItem('rooms'));
     var newOutput = "";
-    for (var i in rooms) {
-      if(i=="games") newObj = rooms.games;
-      else if(i=="quiettime") newObj = rooms.quiettime;
-      else if(i=="learning") newObj = rooms.learning;
-      else if(i=="working") newObj = rooms.working;
-
-      newOutput += "<h2>" + newObj[0].name + "</h2>";
-          for (var j = 0; j < newObj.length; j++) {
+    for (var i in data) {
+      newOutput += "<h2>" + data[i][0].name + "</h2>";
+          for (var j = 0; j < data[i].length; j++) {
            var availability = "<button class='unavailable'>Unavailable";
-           if(newObj[j].available) availability = "<button class='available' id='" + newObj[j].number + "' onClick='toggleAvailability(this);'>Available";
-           newOutput += "<table><tr><td>Room" + newObj[j].number + "</td> <td> " + availability + "</button></td></tr></table>";
+           if(data[i][j].available) availability = "<button class='available' id='" + data[i][j].number + "' onClick='toggleAvailability(this);'>Available";
+           newOutput += "<table><tr><td>Room" + data[i][j].number + "</td> <td> " + availability + "</button></td></tr></table>";
           }
     }
     $(".availables").html(newOutput);
@@ -23,28 +20,22 @@ var data = (localStorage.getItem('rooms')) ? JSON.parse(localStorage.getItem('ro
 })();
 
  function toggleAvailability(buttonClicked){
-  $.getJSON("js/rooms.json", function(rooms) {
-
-    var newObj = rooms.meetings;
     var newOutput = "";
-    for (var i in rooms) {
-      if(i=="games") newObj = rooms.games;
-      else if(i=="quiettime") newObj = rooms.quiettime;
-      else if(i=="learning") newObj = rooms.learning;
-      else if(i=="working") newObj = rooms.working;
-          for (var j = 0; j < newObj.length; j++) {
-           if(buttonClicked.id === newObj[j].number){
+    for (var i in data) {
+          for (var j = 0; j < data[i].length; j++) {
+           if(buttonClicked.id === data[i][j].number){
            	if(buttonClicked.innerText === "Available"){
-              newObj[j].available = false;
+              data[i][j].available = false;
+              localStorage.setItem('rooms', JSON.stringify(data));
               $(buttonClicked).removeClass("available").addClass('unavailable');
               buttonClicked.innerText = "Unavailable"
            	}else{
-           	  newObj[j].available = true;
+           	  data[i][j].available = true;
+           	  localStorage.setItem('rooms', JSON.stringify(data));
            	  $(buttonClicked).removeClass("unavailable").addClass('available');
            	  buttonClicked.innerText = "Available"
            	}    	
            }
           }
     }
-  })
  }
