@@ -9,8 +9,9 @@ var data;
     for (var i in data) {
       newOutput += "<h2>" + data[i][0].name + "</h2>";
           for (var j = 0; j < data[i].length; j++) {
-           var availability = "<button class='unavailable'>Unavailable";
+           var availability = "";
            if(data[i][j].available) availability = "<button class='available' id='" + data[i][j].number + "' onClick='toggleAvailability(this);'>Available";
+           else availability = "<button class='unavailable' id='" + data[i][j].number + "' onClick='toggleAvailability(this);'>Unvailable";
            newOutput += "<table><tr><td>Room" + data[i][j].number + "</td> <td> " + availability + "</button></td></tr></table>";
           }
     }
@@ -30,6 +31,7 @@ var data;
               $(buttonClicked).removeClass("available").addClass('unavailable');
               buttonClicked.innerText = "Unavailable"
            	}else{
+           		console.log('localStorage');
            	  data[i][j].available = true;
            	  localStorage.setItem('rooms', JSON.stringify(data));
            	  $(buttonClicked).removeClass("unavailable").addClass('available');
