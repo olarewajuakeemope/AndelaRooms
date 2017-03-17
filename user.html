@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>User</title>
+<title>Andela Room Checking</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="user.js"></script>
 </head>
-<body>
+
+<body >
+    <div class="wrapper">
+      <img class="logo"src="images/andela-logo.png" alt= "Andela" >
+  
+    </div>
+<div>
+   <input type="checkbox" name="mycheckbox" id="checkme" value="roomselect" > Check to Select a room<br>
+  <div class="wrapper" id='se'>
+    
+  <form name="myform">
+
+<input type="checkbox" name="mycheckbox" value="meeting"> Meeting<br>
+  <input type="checkbox" name="mycheckbox" value="games"> Games<br>
+  <input type="checkbox" name="mycheckbox" value="quiettime"> Quiet Time<br>
+  <input type="checkbox" name="mycheckbox" value="learning" > Learning<br>
+  <input type="checkbox" name="mycheckbox" value="working"> Working<br>
+
+</form>
+  </div>
+  <span id='display'></span>
+</div>
+</div>
 
 </body>
 </html>

@@ -4,13 +4,29 @@ body{
 		padding:0;
 		color:#000;
 		background-color:#f0f0f3;
+		background-image:url(../images/background.jpg)
 	}
+	
+	
+.logo img{
+	width:250px;
+	height:100px;
+}
 
 .wrapper{
-	min-height:600px;
+	min-height:200px;
 	margin: 0 auto;
 	width:80%;
-	background-color:#fff;
+	background-color:#f0f0f3;
+}
+
+.user{
+	font-size:100px;
+}
+
+.login{
+	margin:3% 25% 3% 25%;
+	width:500px;
 }
 
 .man-wrap{
