@@ -11,3 +11,17 @@ function validateForm(form) {
     }
   })
 }
+
+if (!localStorage.getItem('rooms')) {
+  getRoomJsonFile();
+}
+
+function getRoomJsonFile(){
+  $.getJSON("js/rooms.json", function(rooms) {
+    createLocalStorage(rooms);
+  })
+}
+
+function createLocalStorage(rooms){
+  localStorage.setItem('rooms', JSON.stringify(rooms));
+}
