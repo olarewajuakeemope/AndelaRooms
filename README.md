@@ -1,5 +1,4 @@
-# AndelaRooms
-Andela Rooms Project for second SLC Bootcamp
+Rooms assignment Project
 
 Admin username: Bakare
 Admin password: thisPassword
